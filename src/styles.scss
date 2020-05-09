@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: lavenderblush; }
+.errorMessage {
+    color: #E05C65;
+    font-size: 12px;
+  }
+  .form-control {
+    height: 34px;
+    font-size: 14px;
+  }
+  .table-wrapper {
+    overflow: auto;
+  }
+  .date {
+    display: flex;
+  }  
+ 
+  
+
+  .userdata-btn-submit{
+    background-color: blue;
+    color: white;
+  }
+  .table-wrapper {
+    overflow: auto;
+  }
+  .component-wrapper {
+    padding: 2%;
+    height: 92%;
+    overflow: auto;
+  }
+  th.mat-header-cell {
+    font-weight: 600;
+    background-color: #dc5255;
+    font-size: 14px;
+    color: #fffbfb;
+  }
+  .mat-table .mat-icon {
+    height: 18px !important;
+    width: 30px !important;
+    cursor: pointer;
+  }
+  table {
+    width: 100%;
+  }
+  
+  tr.mat-header-row {
+    height: 45px !important;
+  }
+  
+  tr.mat-row {
+    height: 40px !important;
+  }
+  td,
+th {
+  text-align: left;
+}
+
+
+.userdata-textbox-search-view {
+  // float: right;
+  width: 20% !important;
+  padding-right: 1%;
+}
+
+.col-md-6 .userdata-textbox-search-view {
+  width: 40% !important;
+}
+
+    
+label {
+  color: black; // black;
+  font-size: 14px;
+  font-weight: 500;
+}

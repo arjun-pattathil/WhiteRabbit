@@ -1,0 +1,89 @@
+<div class="component-wrapper">
+    <div class="offset-4">
+        <form [formGroup]="newUserFormGroup">
+            <div class="col-md-5">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="gender">
+                    <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+                        {{gender}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="col-md-5">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="gender">
+                    <mat-radio-button class="example-radio-button" *ngFor="let title of titles" [value]="title">
+                        {{title}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+            </div>
+            <div class="col-md-5">
+                <label for="firstName" class="required-label">First Name : </label>
+                <input #nameControl type="text" class="form-control" formControlName="firstName"
+                    placeholder="First Name" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['firstName'].hasError('required') && newUserFormGroup.controls['firstName'].touched">
+                    First Name is required.
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="lastName" class="required-label">Last Name : </label>
+                <input #nameControl type="text" class="form-control" formControlName="lastName"
+                    placeholder="Last Name" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['lastName'].hasError('required') && newUserFormGroup.controls['lastName'].touched">
+                    Last Name is required.
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="email" class="required-label"> Email : </label>
+                <input id="email" type="text" class="form-control" formControlName="email" placeholder="Email"
+                    maxlength="30" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['email'].hasError('required') && newUserFormGroup.controls['email'].touched">
+                    Email is required.
+                </div>
+                <div class="errorMessage" *ngIf="newUserFormGroup.controls['email'].hasError('email')">
+                    Email must be a valid email address
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="username" class="required-label">User Name : </label>
+                <input #nameControl type="text" class="form-control" formControlName="username"
+                    placeholder="User Name" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['username'].hasError('required') && newUserFormGroup.controls['username'].touched">
+                    User Name is required.
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="password" class="required-label">Password : </label>
+                <input #nameControl type="text" class="form-control" formControlName="password"
+                    placeholder="Password" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['password'].hasError('required') && newUserFormGroup.controls['password'].touched">
+                    Password is required.
+                </div>
+            </div>
+            <br>
+            <div class="date col-md-5">
+                <input class="form-control" [matDatepicker]="picker2" placeholder="DOB" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </div>
+            <div class="col-md-5">
+                <label for="phone" class="required-label">Phone : </label>
+                <input #nameControl type="tel" class="form-control" formControlName="phone" placeholder="Phone" />
+                <div class="errorMessage"
+                    *ngIf="newUserFormGroup.controls['phone'].hasError('required') && newUserFormGroup.controls['phone'].touched">
+                    Phone number is required.
+                </div>
+            </div>
+            <div class="col-md-5" style="margin: 5% 0% 0% 13%;">
+                <button mat-raised-button class="btn btn-sm userdata-btn-submit button"
+                    [disabled]="newUserFormGroup.invalid" (click)="newRegistration()">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
